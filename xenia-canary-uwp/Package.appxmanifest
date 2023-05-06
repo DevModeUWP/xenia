@@ -1,26 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp rescap">
-  <Identity
-    Name="27d6ba69-e4f1-4b69-b391-8238bab5a431"
-    Publisher="CN=SirMangler"
-    Version="1.1.2.0" />
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Package IgnorableNamespaces="uap mp rescap build" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:build="http://schemas.microsoft.com/developer/appx/2015/build">
+  
+  <Identity Name="MicrosoftXbox360-powered-by-Xenia-Canary" Publisher="CN=DM" Version="1.1.2.0" ProcessorArchitecture="x64"/>
   <mp:PhoneIdentity PhoneProductId="27d6ba69-e4f1-4b69-b391-8238bab5a431" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
   <Properties>
-    <DisplayName>xenia-canary-uwp</DisplayName>
-    <PublisherDisplayName>SirMangler</PublisherDisplayName>
+    <DisplayName>Microsoft Xbox 360 (powered by Xenia-Canary)</DisplayName>
+    <PublisherDisplayName>DM</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17134.0" MaxVersionTested="10.0.22621.0"/>
+    <PackageDependency Name="Microsoft.VCLibs.140.00" MinVersion="14.0.30704.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"/>
   </Dependencies>
   <Resources>
-    <Resource Language="x-generate" />
+    <Resource Language="EN-US"/>
+    <Resource uap:Scale="200"/>
+    
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="xenia_canary_uwp.App">
-      <uap:VisualElements DisplayName="Xenia Canary" Description="The Xenia project on UWP! Xbox is a trademark of Microsoft. Xenia is not affiliated with Microsoft."
-        Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="transparent">
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+    <Application Id="App" Executable="xeniacanary.exe" EntryPoint="xenia_canary_uwp.App">
+      <uap:VisualElements DisplayName="Microsoft Xbox 360" Description="powered by Xenia-Canary for UWP" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" BackgroundColor="#ffffff">
+        <uap:SplashScreen Image="Assets\SplashScreen.png"/>
         <uap:DefaultTile/>
       </uap:VisualElements>
       <Extensions>
@@ -47,10 +47,22 @@
     </Application>
   </Applications>
   <Capabilities>
-	  <Capability Name="internetClient" />
-	  <rescap:Capability Name="runFullTrust"/>
-	  <rescap:Capability Name="broadFileSystemAccess" />
-	  <uap:Capability Name="removableStorage"/>
-	  <Capability Name="codeGeneration"/>
+    <Capability Name="internetClient"/>
+    <rescap:Capability Name="runFullTrust"/>
+    <rescap:Capability Name="broadFileSystemAccess"/>
+    <uap:Capability Name="removableStorage"/>
+    <Capability Name="codeGeneration"/>
   </Capabilities>
+  <build:Metadata>
+    <build:Item Name="cl.exe" Version="19.34.31942.0"/>
+    <build:Item Name="VisualStudio" Version="17.0"/>
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2022"/>
+    <build:Item Name="OperatingSystem" Version="10.0.19041.1 (WinBuild.160101.0800)"/>
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="17.4.33403.182"/>
+    <build:Item Name="ProjectGUID" Value="{b235bec7-29b5-4e46-88db-0139cadb61cc}"/>
+    <build:Item Name="OptimizingToolset" Value="None"/>
+    <build:Item Name="TargetRuntime" Value="Native"/>
+    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="0.0.0.0"/>
+    <build:Item Name="MakePri.exe" Version="10.0.22621.755 (WinBuild.160101.0800)"/>
+  </build:Metadata>
 </Package>
